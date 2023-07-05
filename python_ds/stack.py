@@ -50,3 +50,47 @@ stack.get()
 #fixing stack length
 s=LifoQueue(2)
 
+
+#arrays
+class stack:
+    def __init__(self,size=10)->None:
+        self.MAX=size
+        self.stack=[]
+        self.top=0
+    def push(self,data):
+        if self.top !=self.MAX:
+            self.stack.append(data)
+            self.top+=1
+            return self.stack
+        else:
+            print("overflow")
+    def pop(self):
+        if self.top==0:
+            print("underflow")
+        else:
+            self.top-=1
+            return self.stack.pop()
+    def __len__(self):
+        return self.top
+    def show(self)->str:
+        s='Z|\t'
+        for i in self.stack:
+            print(i)
+def main():
+    s=stack(5)
+    print(s.push(10))
+    print(s.push(20))
+    print(s.push(30))
+    print(s.push(40))
+    print(s.push(50))
+    print(s.push(60))
+    print(s.show())
+    print(s.pop())
+    print(len(s))
+    print(s.pop())
+    print(len(s))
+if __name__=='__main__':
+    main()
+    
+
+
