@@ -21,4 +21,24 @@ while True:
     else:
         break
 
+#collection modules:
+
+import collections
+#adding on left side and removing at right side
+q=collections.deque()
+q.appendleft(10)
+q.appendleft(20)
+q.appendleft(30)
+q.pop()
+q.pop()
+print(q)
+#adding at right side and removing from left side
+x=collections.deque()
+x.append(3)
+x.append(2)
+x.append(1)
+x.popleft()
+print(x)
+
+
     
