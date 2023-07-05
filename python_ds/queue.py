@@ -1,4 +1,4 @@
-#using arrays:
+#using lists:
 queue=[]
 def push():
     print("enter the element")
