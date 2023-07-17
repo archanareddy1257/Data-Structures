@@ -93,4 +93,56 @@ if __name__=='__main__':
     main()
     
 
+# Using Linked Lists:
+class MyStack:
+    #Function to push an integer into the stack.
+    def __init__(self):
+        self.head=None
+        self.top=-1
+        
+    def push(self, data):
+        # Add code here
+        temp=StackNode(data)
+        if self.head is None:
+            self.head=temp
+            self.top+=1
+            return
+        temp.next=self.head
+        self.head=temp
+        self.top+=1
+        return
+    #Function to remove an item from top of the stack.
+    def pop(self):
+        # Add code here
+        if self.isEmpty():
+            return -1
+        temp=self.head
+        self.head=self.head.next
+        self.top-=1
+        return temp.data
+    def isEmpty(self):
+        return self.top==-1
+class StackNode:
+    # Constructor to initialize a node
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        s = MyStack()
+        q = int(input())
+        q1 = list(map(int, input().split()))
+        i = 0
+        while(i < len(q1)):
+            if(q1[i] == 1):
+                s.push(q1[i + 1])
+                i = i + 2
+            elif(q1[i] == 2):
+                print(s.pop(), end=" ")
+                i = i + 1
+            elif(s.isEmpty()):
+                print(-1)
+        print()
 
+# } Driver Code Ends
